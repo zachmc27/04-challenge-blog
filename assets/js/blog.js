@@ -1,4 +1,8 @@
 // TODO: Create a variable that selects the main element, and a variable that selects the back button element
+const mainEl = document.querySelector('main');
+const buttonEl = document.querySelector('.back-button-js');
+console.log(mainEl)
+console.log(buttonEl)
 
 // TODO: Create a function that builds an element and appends it to the DOM
 
