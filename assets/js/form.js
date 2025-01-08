@@ -6,17 +6,29 @@ const formEl = document.querySelector('form')
 // If the form is submitted with missing data, display an error message to the user.
 function formSubmission(event) {
     event.preventDefault()
+    const formData = {
+    username:  document.getElementById('username').value,
+    title: document.getElementById('title').value,
+    content: document.getElementById('content').value
+    }
 
-    const usernameData = document.getElementById('username').select()
-    const titleData = document.getElementById('title').select()
-    const contentData = document.getElementById('content').select()
+    console.log(formData)
+    document.getElementById('error').textContent = 'test'
+     if (formData.username === "" || formData.title === "" || formData.content === "") {
+        document.getElementById('error').textContent = 'Please complete the form.'
+        setTimeout(() => {
+            document.getElementById('error').textContent = ''
+        }, 5000)
+        return
+    } 
 
     localStorage.setItem('formData', JSON.stringify(formData))
-    redirectPage(blog.html)
+    redirectPage('blog.html')
+    
 }
 // TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
 const submitButton = document.querySelector('.submit-js')
-submitButton.addEventListener('click', () => {
-    formSubmission()
+submitButton.addEventListener('click', (event) => {
+    formSubmission(event)
 })
 
