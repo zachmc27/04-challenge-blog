@@ -12,8 +12,8 @@ function formSubmission(event) {
     content: document.getElementById('content').value
     }
 
-    console.log(formData)
-    document.getElementById('error').textContent = 'test'
+   
+    
      if (formData.username === "" || formData.title === "" || formData.content === "") {
         document.getElementById('error').textContent = 'Please complete the form.'
         setTimeout(() => {
