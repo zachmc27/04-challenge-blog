@@ -1,22 +1,36 @@
 // TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
 const themeButtonEl = document.querySelector('.theme-button-js')
 const pageTheme = document.querySelector('.theme')
-console.log(pageTheme)
-console.log(themeButtonEl)
+pageTheme.classList.add(localStorage.getItem('theme') || 'light')
+
+
+themeButtonEl.textContent = `${localStorage.getItem('theme-icon')}`
+
+if (themeButtonEl.textContent === 'null') {
+  themeButtonEl.textContent = "☀️"
+}
+
 themeButtonEl.addEventListener('click', (event) => {
+
+ /*
  console.log('test')
- pageTheme.setAttribute("class", "test")
- /*const element = event.target
-
- let state = element.getAttribute('data-state')
-
- if (element.matches('theme-button-js')) {
-  if (state === 'light') {
+ pageTheme.setAttribute("class", "dark")
+ */ 
+ const element = event.target
+ 
+  if(element.matches('.theme-button-js')) {
+  if (pageTheme.classList.contains('light')) {
+    themeButtonEl.textContent = "🌙"
     pageTheme.setAttribute("class", "dark")
-  } else if (state === 'dark') {
+    localStorage.setItem('theme', 'dark')
+    localStorage.setItem('theme-icon', '🌙')
+  } else if (pageTheme.classList.contains('dark')) {
+    themeButtonEl.textContent = "☀️"
     pageTheme.setAttribute("class", "light")
+    localStorage.setItem('theme', 'light')
+    localStorage.setItem('theme-icon', '☀️')
   }
- } */
+}
 }) 
 
 // TODO: Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
