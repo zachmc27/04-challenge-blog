@@ -1,6 +1,8 @@
 // TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
 const themeButtonEl = document.querySelector('.theme-button-js')
 const pageTheme = document.querySelector('.theme')
+const circleEl = document.getElementById('circle')
+
 pageTheme.classList.add(localStorage.getItem('theme') || 'light')
 
 
@@ -22,6 +24,7 @@ themeButtonEl.addEventListener('click', (event) => {
   if (pageTheme.classList.contains('light')) {
     themeButtonEl.textContent = "🌙"
     pageTheme.setAttribute("class", "dark")
+    
     localStorage.setItem('theme', 'dark')
     localStorage.setItem('theme-icon', '🌙')
   } else if (pageTheme.classList.contains('dark')) {

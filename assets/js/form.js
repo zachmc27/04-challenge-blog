@@ -1,6 +1,8 @@
 // TODO: Create a variable that selects the form element
 const formEl = document.querySelector('form')
 
+//for future me: try defining posts array here, save posts array to local storage and get it on blog.js. Also try changing eventlistener to submit.
+
 // TODO: Create a function that handles the form submission.
 // Grab the form data and store it in local storage, then redirect to the blog page using the `redirectPage` function. 
 // If the form is submitted with missing data, display an error message to the user.
