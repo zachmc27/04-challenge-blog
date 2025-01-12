@@ -1,6 +1,7 @@
 // TODO: Create a variable that selects the form element
 const formEl = document.querySelector('form')
 
+
 //for future me: try defining posts array here, save posts array to local storage and get it on blog.js. Also try changing eventlistener to submit.
 
 // TODO: Create a function that handles the form submission.
@@ -8,6 +9,7 @@ const formEl = document.querySelector('form')
 // If the form is submitted with missing data, display an error message to the user.
 function formSubmission(event) {
     event.preventDefault()
+    const postsArray = []
     const formData = {
     username:  document.getElementById('username').value,
     title: document.getElementById('title').value,
@@ -24,13 +26,16 @@ function formSubmission(event) {
         return
     } 
 
-    localStorage.setItem('formData', JSON.stringify(formData))
+    postsArray.push(formData)
+    console.log(postsArray)
+
+    storeLocalStorage(postsArray)
     redirectPage('blog.html')
     
 }
 // TODO: Add an event listener to the form on submit. Call the function to handle the form submission.
 const submitButton = document.querySelector('.submit-js')
-submitButton.addEventListener('click', (event) => {
+formEl.addEventListener('submit', (event) => {
     formSubmission(event)
 })
 
