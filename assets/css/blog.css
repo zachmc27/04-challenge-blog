@@ -43,6 +43,11 @@ footer {
 
 li {
   margin: 1rem;
+  font-style: italic;
+}
+
+span {
+  font-weight: bold
 }
 
 main {

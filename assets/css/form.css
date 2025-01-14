@@ -88,17 +88,7 @@ section {
   border-left: solid .5rem var(--disabled);
 }
 
-.dark aside {
-  background: linear-gradient(
-    var(--light-accent), 
-    var(--action), 
-    var(--action-accent)
-  );
-  clip-path: circle(20rem at center);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 /*
   IDs
 */
